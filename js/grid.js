@@ -85,9 +85,57 @@ Grid.prototype.cellContent = function (cell) {
   }
 };
 
+var nyan = new Audio('/playground/2048-animals/audio/nyan.mp3');
+
 // Inserts a tile at its position
 Grid.prototype.insertTile = function (tile) {
   this.cells[tile.x][tile.y] = tile;
+
+  //if(!tile.merged)
+  //  return;
+  
+  switch(tile.value){
+    case 4:
+      var audio = new Audio('http://findtheinvisiblecow.com/sounds/cow/win.mp3');
+      audio.play();
+      break;
+    case 8:
+      var audio = new Audio('/playground/2048-animals/audio/pig.mp3');
+      audio.play();
+      break;
+    case 16:
+      var audio = new Audio('/playground/2048-animals/audio/dog.mp3');
+      audio.play();
+      break;
+    case 32:
+      var audio = new Audio('/playground/2048-animals/audio/cat.mp3');
+      audio.play();
+      break;
+    case 64:
+      var audio = new Audio('/playground/2048-animals/audio/chicken.mp3');
+      audio.play();
+      break;
+    case 128:
+      var audio = new Audio('/playground/2048-animals/audio/horse.mp3');
+      audio.play();
+      break;
+    case 256:
+      var audio = new Audio('http://findtheinvisiblecow.com/sounds/fox/win.mp3');
+      audio.play();
+      break;
+    case 512:
+      var audio = new Audio('http://findtheinvisiblecow.com/sounds/goat/win.mp3');
+      audio.play();
+      break;
+    case 1024:
+      var audio = new Audio('/playground/2048-animals/audio/lion.mp3');
+      audio.play();
+      break;
+    case 2048:
+      nyan.play();
+      break;
+  }
+
 };
 
 Grid.prototype.removeTile = function (tile) {
