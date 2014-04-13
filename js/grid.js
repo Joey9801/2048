@@ -85,7 +85,19 @@ Grid.prototype.cellContent = function (cell) {
   }
 };
 
-var nyan = new Audio('/playground/2048-animals/audio/nyan.mp3');
+
+var audio = {
+    cow: new Audio('audio/cow.mp3'),
+    pig: new Audio('audio/pig.mp3'),
+    dog: new Audio('audio/dog.mp3'),
+    cat: new Audio('audio/cat.mp3'),
+    chicken: new Audio('audio/chicken.mp3'),
+    horse: new Audio('audio/horse.mp3'),
+    fox: new Audio('audio/fox.mp3'),
+    goat: new Audio('audio/goat.mp3'),
+    lion: new Audio('audio/lion.mp3'),
+    nyan: new Audio('audio/nyan.mp3')
+};
 
 // Inserts a tile at its position
 Grid.prototype.insertTile = function (tile) {
@@ -96,43 +108,34 @@ Grid.prototype.insertTile = function (tile) {
   
   switch(tile.value){
     case 4:
-      var audio = new Audio('http://findtheinvisiblecow.com/sounds/cow/win.mp3');
-      audio.play();
+      audio.cow.play();
       break;
     case 8:
-      var audio = new Audio('/playground/2048-animals/audio/pig.mp3');
-      audio.play();
+      audio.pig.play();
       break;
     case 16:
-      var audio = new Audio('/playground/2048-animals/audio/dog.mp3');
-      audio.play();
+      audio.dog.play();
       break;
     case 32:
-      var audio = new Audio('/playground/2048-animals/audio/cat.mp3');
-      audio.play();
+      audio.cat.play();
       break;
     case 64:
-      var audio = new Audio('/playground/2048-animals/audio/chicken.mp3');
-      audio.play();
+      audio.chicken.play();
       break;
     case 128:
-      var audio = new Audio('/playground/2048-animals/audio/horse.mp3');
-      audio.play();
+      audio.horse.play();
       break;
     case 256:
-      var audio = new Audio('http://findtheinvisiblecow.com/sounds/fox/win.mp3');
-      audio.play();
+      audio.fox.play();
       break;
     case 512:
-      var audio = new Audio('http://findtheinvisiblecow.com/sounds/goat/win.mp3');
-      audio.play();
+      audio.goat.play();
       break;
     case 1024:
-      var audio = new Audio('/playground/2048-animals/audio/lion.mp3');
-      audio.play();
+      audio.lion.play();
       break;
     case 2048:
-      nyan.play();
+      audio.nyan.play();
       break;
   }
 
